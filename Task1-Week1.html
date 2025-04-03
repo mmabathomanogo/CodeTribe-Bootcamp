@@ -1,9 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="eng">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Global Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+      }
+
+      header img {
+        border-radius: 50%;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-top: 10px;
+      }
+
+      header p {
+        font-size: 1.2rem;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin: 0 10px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2rem;
+        padding: 10px;
+      }
+
+      nav ul li a:hover {
+        background-color: #575757;
+        border-radius: 5px;
+      }
+
+      section {
+        padding: 20px;
+        margin: 10px;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      ul li {
+        margin: 10px 0;
+      }
+
+      button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+      }
+
+      footer a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        header {
+          padding: 10px;
+        }
+
+        header h1 {
+          font-size: 2rem;
+        }
+
+        header p {
+          font-size: 1rem;
+        }
+
+        nav ul {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        nav ul li {
+          margin: 5px 0;
+        }
+
+        .hamburger {
+          display: block;
+          background-color: #333;
+          padding: 10px;
+          cursor: pointer;
+        }
+
+        nav ul {
+          display: none;
+          flex-direction: column;
+        }
+
+        nav ul li a {
+          padding: 15px;
+        }
+
+        nav.active ul {
+          display: flex;
+        }
+      }
+
+      /* Media query for mobile */
+      @media (max-width: 480px) {
+        header img {
+          width: 100px;
+          height: 100px;
+        }
+        header h1 {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -15,6 +176,7 @@
         style="border-radius: 50%"
       />
       <nav>
+        <div class="hamburger" onclick="toggleNav()">&#9776;</div>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Me</a></li>
@@ -98,13 +260,13 @@
 
     <footer>
       <p>Contact me:</p>
-      <p>
-        Email: mmabathomanogo@gmail.com</a>
-      </p>
+      <p>Email: mmabathomanogo@gmail.com</p>
       <p>Phone: +27 71 523 4715</p>
       <p>
         GitHub:
-        <a href="https://github.com/mmabathomanogo" target="_blank">github.com</a>
+        <a href="https://github.com/mmabathomanogo" target="_blank"
+          >github.com</a
+        >
       </p>
       <p>
         LinkedIn:
@@ -115,5 +277,12 @@
         >
       </p>
     </footer>
+
+    <script>
+      function toggleNav() {
+        const nav = document.querySelector("nav");
+        nav.classList.toggle("active");
+      }
+    </script>
   </body>
 </html>
